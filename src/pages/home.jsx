@@ -18,7 +18,7 @@ export const Home = () => {
         <div className='container button_circle_container'>
             <div className="row">
                 <div className='important_circle'>
-                <Link to="/food_request">
+                <Link to="/food">
                     <h2>Food Assistance</h2>
                 </Link>
             </div>
