@@ -2,12 +2,13 @@ import React from 'react'
 import { STATIC_INFO } from '../../Website/STATIC_INFO'
 import { Link } from 'react-router-dom'
 import '../App.css'
+import heroImage from '../PHOTO-2026-02-07-12-20-57.jpg'
 
 export const Home = () => {
     return (
         <>
         <div className='container  main_container'>
-        <img src='src\PHOTO-2026-02-07-12-20-57.jpg' width={"100%"} height={"100%"} />
+        <img src={heroImage} width={"100%"} height={"100%"} />
         <div className='text_box transparent'>
             <p>
             Supporting community through <strong style={{color: "rgba(255, 0, 0, 0.7)"}}>crises</strong>
