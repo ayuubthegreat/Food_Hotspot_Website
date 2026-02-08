@@ -18,7 +18,8 @@ function App() {
         <Navbar />
         <Routes>
            <Route path="/" element={<Home />} />
-           <Route path="/food_request" element={<Form_Page />} />
+           <Route path="/food" element={<Form_Page />} />
+           <Route path="*" element={<div>Page Not Found</div>} />
         </Routes>
       </Router>
       

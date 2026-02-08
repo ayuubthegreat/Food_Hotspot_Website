@@ -24,7 +24,7 @@ export const Navbar = () => {
             <>
             <Custom_Link func={0} link={"/about"} text={"About"} />
                 <Custom_Link func={0} link={"/tenant"} text={"Tenant Housing"}/>
-                <Custom_Link func={0} link={"/food_request"} text={"Food Request Form"}/>
+                <Custom_Link func={0} link={"/food"} text={"Food Request Form"}/>
             </>
         )
     }
