@@ -9,14 +9,17 @@ import { Footer, Navbar } from './components/navbar_footer';
 import { Form_Page } from './pages/form_page';
 import { Tenant_Page } from './pages/tenant_page';
 import { About_Us } from './pages/about_us';
+import { useSelector } from 'react-redux';
 
 function App() {
   const [count, setCount] = useState(0)
+  const {loading} = useSelector((state) => state.foodForm);
 
   return (
     <>
       
       <Router>
+        {loading && <div className="loading_overlay">Submitting...</div>}
         <Navbar />
         <Routes>
            <Route path="/" element={<Home />} />
