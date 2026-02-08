@@ -9,9 +9,7 @@ const Website_Clickable_Name = () => {
     )
 }
 const Custom_Link = ({func, link, text}) => {
-    const funcArr = [
-        () => {setRevealed(false)}
-    ]
+    
     return (
         <Link onClick={() => {funcArr[func]()}} to={link}>{text}</Link>
     )
@@ -19,12 +17,15 @@ const Custom_Link = ({func, link, text}) => {
 
 export const Navbar = () => {
     const [revealed, setRevealed] = useState(false);
+    const funcArr = [
+        () => {setRevealed(false)}
+    ]
     const Navbar_Links = () => {
         return (
             <>
-            <Custom_Link func={0} link={"/about"} text={"About"} />
-                <Custom_Link func={0} link={"/tenant"} text={"Tenant Housing"}/>
-                <Custom_Link func={0} link={"/food"} text={"Food Request Form"}/>
+            <Link onClick={() => {funcArr[0]()}} to="/about">About</Link>
+            <Link onClick={() => {funcArr[0]()}} to="/tenant">Tenant Housing</Link>
+            <Link onClick={() => {funcArr[0]()}} to="/food">Food Request Form</Link>
             </>
         )
     }
