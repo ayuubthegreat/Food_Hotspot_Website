@@ -10,7 +10,7 @@ const initialState = {
 
 export const submitFoodForm = createAsyncThunk(
     "foodForm/submitFoodForm",
-    async (form_data, { rejectWithValue }) => {
+    async ({form_data}, { rejectWithValue }) => {
         try {
             const response = await API_Call("post", "food/form", form_data);
             return response;

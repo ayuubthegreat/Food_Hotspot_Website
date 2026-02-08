@@ -11,6 +11,7 @@ export const Form_Page = () => {
         handleSubmit,
         register,
         formState: { errors },
+        reset
     } = useForm({
         defaultValues: {
             name: "",
@@ -39,10 +40,12 @@ export const Form_Page = () => {
 
 
         try {
-            await dispatch(submitFoodForm(data)).unwrap();
+            await dispatch(submitFoodForm({ form_data: data })).unwrap();
             alert("Form submitted successfully!");
+            reset();
         } catch (error) {
-            alert("Failed to submit the form: " + error);
+            alert("Failed to submit the form: " + (error.message || JSON.stringify(error)));
+            console.error("Error details:", error);
         }
     }
     const evaluateData = (data) => {
