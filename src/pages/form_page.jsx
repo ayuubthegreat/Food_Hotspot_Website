@@ -37,12 +37,17 @@ export const Form_Page = () => {
             data.token = Math.round(Math.random() * 100000000) + Date.now();
             console.log("Generated token:", data.token);
         }
+        if (data.phone == "") {
+            console.log("Phone number is empty, using local state value:", phone);
+            data.phone = phone;
+        }
 
 
         try {
             await dispatch(submitFoodForm({ form_data: data })).unwrap();
             alert("Form submitted successfully!");
             reset();
+            setPhone("");
         } catch (error) {
             alert("Failed to submit the form: " + (error.message || JSON.stringify(error)));
             console.error("Error details:", error);
